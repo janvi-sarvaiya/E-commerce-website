@@ -1,0 +1,64 @@
+{
+  "kind": "collectionType",
+  "collectionName": "e_commerces",
+  "info": {
+    "singularName": "e-commerce",
+    "pluralName": "e-commerces",
+    "displayName": "products"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "product_id": {
+      "type": "integer",
+      "required": true,
+      "unique": true
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "category": {
+      "type": "string",
+      "required": true
+    },
+    "price": {
+      "type": "decimal",
+      "required": true
+    },
+    "originalPrice": {
+      "type": "decimal",
+      "required": false
+    },
+    "discount": {
+      "type": "integer"
+    },
+    "rating": {
+      "type": "decimal",
+      "min": 1,
+      "max": 5
+    },
+    "reviews": {
+      "type": "integer"
+    },
+    "description": {
+      "type": "blocks"
+    },
+    "size": {
+      "type": "json"
+    },
+    "image": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "files",
+        "images"
+      ]
+    },
+    "inStock": {
+      "type": "boolean"
+    }
+  }
+}

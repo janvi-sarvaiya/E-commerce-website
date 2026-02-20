@@ -1,0 +1,465 @@
+{
+  "product": [
+    {
+      "id": "1",
+      "name": "HAVIT HV-G92 Gamepad",
+      "category": "gaming",
+      "price": 120,
+      "originalPrice": 160,
+      "discount": 40,
+      "rating": 5,
+      "reviews": 88,
+      "description": "PlayStation 5 Controller Skin High quality vinyl with air channel adhesive for easy bubble free install & mess free removal Pressure sensitive.",
+      "size": ["XS", "S", "M", "L", "XL"],
+      "image": [
+        "https://res.cloudinary.com/dxj264ncs/image/upload/v1771304168/gamepad1_nwsf9o.png",
+        "https://res.cloudinary.com/dxj264ncs/image/upload/v1771304152/angle1_s33eoe.png",
+        "https://res.cloudinary.com/dxj264ncs/image/upload/v1771304152/angle2_v7rwvf.png",
+        "https://res.cloudinary.com/dxj264ncs/image/upload/v1771304152/angle3_yqe8vn.png",
+        "https://res.cloudinary.com/dxj264ncs/image/upload/v1771304153/angle4_khnbcj.png"
+      ],
+      "inStock": true
+    },
+    {
+      "id": "2",
+      "name": "AK-900 Wired Keyboard",
+      "category": "computer",
+      "price": 960,
+      "originalPrice": 1160,
+      "discount": 35,
+      "rating": 4,
+      "reviews": 75,
+      "description": "The iMICE AK-900 is a budget-friendly, full-size (104-key) wired gaming keyboard featuring vibrant RGB backlighting with on/off functionality.",
+      "size": ["S", "M", "L", "XL"],
+      "image": [
+        "https://res.cloudinary.com/dxj264ncs/image/upload/v1771304176/keyboard_avaycr.png",
+        "angle1",
+        "angle2",
+        "angle3",
+        "angle4"
+      ],
+      "inStock": true
+    },
+    {
+      "id": "3",
+      "name": "IPS LCD Gaming Monitor",
+      "category": "computer",
+      "price": 370,
+      "originalPrice": 400,
+      "discount": 30,
+      "rating": 5,
+      "reviews": 99,
+      "description": "An IPS (In-Plane Switching) LCD gaming monitor is a display that uses specialized liquid crystal technology to deliver superior color accuracy, vibrant visuals",
+      "size": ["22", "24", "28", "32", "34"],
+      "image": [
+        "https://res.cloudinary.com/dxj264ncs/image/upload/v1771304181/moniter_va4az3.png",
+        "angle1",
+        "angle2",
+        "angle3",
+        "angle4"
+      ],
+      "inStock": true
+    },
+    {
+      "id": "4",
+      "name": "S-Series Comfort Chair ",
+      "category": "furniture",
+      "price": 375,
+      "originalPrice": 400,
+      "discount": 25,
+      "rating": 4.5,
+      "reviews": 99,
+      "description": "S-Series Comfort Chair generally refers to ergonomic seating designed for office or home study use, often featuring a sleek, modern, and space-saving design. ",
+      "size": ["XS", "S", "M", "L", "XL"],
+      "image": [
+        "https://res.cloudinary.com/dxj264ncs/image/upload/v1771304160/chair_m08xdj.png",
+        "angle1",
+        "angle2",
+        "angle3",
+        "angle4"
+      ],
+      "inStock": true
+    },
+    {
+      "id": "5",
+      "name": "Gucci duffle bag",
+      "category": "woman",
+      "price": 960,
+      "originalPrice": 1160,
+      "discount": 35,
+      "rating": 4.5,
+      "reviews": 65,
+      "description": "The Gucci duffle bag is a luxurious, high-end travel accessory merging Italian craftsmanship with practical, stylish design. Often crafted from GG Supreme canvas",
+      "size": ["S", "M", "L", "XL"],
+      "image": [
+        "https://res.cloudinary.com/dxj264ncs/image/upload/v1771304155/bag_xbht2k.png",
+        "angle1",
+        "angle2",
+        "angle3",
+        "angle4"
+      ],
+      "inStock": true
+    },
+    {
+      "id": "6",
+      "name": "The north coat",
+      "category": "men",
+      "price": 260,
+      "originalPrice": 360,
+      "rating": 5,
+      "reviews": 65,
+      "description": "The North Face coats Jacket, are high-performance, stylish winter jackets known for their warmth, durability, and streetwear appeal",
+      "size": ["S", "M", "L", "XL"],
+      "image": [
+        "https://res.cloudinary.com/dxj264ncs/image/upload/v1771304161/coat_zr5lhw.png",
+        "angle1",
+        "angle2",
+        "angle3",
+        "angle4"
+      ],
+      "inStock": false
+    },
+    {
+      "id": "7",
+      "name": "RGB liquid CPU Cooler",
+      "category": "computer",
+      "price": 160,
+      "originalPrice": 170,
+      "rating": 4.5,
+      "reviews": 65,
+      "description": "An RGB liquid CPU cooler is a high-performance cooling system for desktop processors that combines efficient water-based cooling with customizable, vibrant lighting",
+      "size": ["120", "240", "280", "360", "420"],
+      "image": [
+        "https://res.cloudinary.com/dxj264ncs/image/upload/v1771304163/cpu_szjnmy.png",
+        "angle1",
+        "angle2",
+        "angle3",
+        "angle4"
+      ],
+      "inStock": true
+    },
+    {
+      "id": "8",
+      "name": "Small BookSelf",
+      "category": "furniture",
+      "price": 360,
+      "originalPrice": 400,
+      "rating": 5,
+      "reviews": 65,
+      "description": "A small bookshelf is a compact, space-efficient furniture piece designed for organizing and displaying books, decor",
+      "size": ["S", "M", "L", "XL"],
+      "image": [
+        "https://res.cloudinary.com/dxj264ncs/image/upload/v1771304157/bookself_dufqmm.png",
+        "angle1",
+        "angle2",
+        "angle3",
+        "angle4"
+      ],
+      "inStock": false
+    },
+    {
+      "id": "9",
+      "name": "Breed Dry Dog Food",
+      "category": "food",
+      "price": 100,
+      "originalPrice": 120,
+      "rating": 3,
+      "reviews": 35,
+      "description": "Small breed dry dog food is specifically formulated with nutrient-dense, smaller kibble sizes to accommodate the higher metabolism",
+      "size": ["XS", "S", "M", "L", "XL"],
+      "image": [
+        "https://res.cloudinary.com/dxj264ncs/image/upload/v1771304164/dog-food_jcfib8.png",
+        "angle1",
+        "angle2",
+        "angle3",
+        "angle4"
+      ],
+      "inStock": true
+    },
+    {
+      "id": "10",
+      "name": "CANON EOS DSLR Camera",
+      "category": "camera",
+      "price": 360,
+      "originalPrice": 400,
+      "rating": 4,
+      "reviews": 95,
+      "description": "Canon EOS cameras deliver power and precision in every shot, offering stunning dynamic range, clean, low-noise images, and beautifully blurred backgrounds.",
+      "size": ["S", "M", "L", "XL"],
+      "image": [
+        "https://res.cloudinary.com/dxj264ncs/image/upload/v1771304159/camera_hgelc0.png",
+        "angle1",
+        "angle2",
+        "angle3",
+        "angle4"
+      ],
+      "inStock": true
+    },
+    {
+      "id": "11",
+      "name": "ASUS FHD Gaming Laptop",
+      "category": "gaming",
+      "price": 700,
+      "originalPrice": 730,
+      "rating": 5,
+      "reviews": 325,
+      "description": "ASUS TUF Gaming Laptops, equipped with high-refresh rate displays, long-lasting batteries, and powerful GPUs, provide an ultra-durable and reliable portable ",
+      "size": ["12", "14", "16", "18", "20"],
+      "image": [
+        "https://res.cloudinary.com/dxj264ncs/image/upload/v1771304179/laptop_qqephx.png",
+        "angle1",
+        "angle2",
+        "angle3",
+        "angle4"
+      ],
+      "inStock": true
+    },
+    {
+      "id": "12",
+      "name": "Curology Product Set",
+      "category": "beauty",
+      "price": 500,
+      "originalPrice": 520,
+      "rating": 4,
+      "reviews": 145,
+      "description": "it is a 3-step, dermatologist-designed, and cruelty-free skincare routine designed for all skin types, focusing on acne treatment, moisture, and gentle daily care",
+      "size": ["XS", "S", "M", "L", "XL"],
+      "image": [
+        "https://res.cloudinary.com/dxj264ncs/image/upload/v1771304166/facewash_zoq9h7.png",
+        "angle1",
+        "angle2",
+        "angle3",
+        "angle4"
+      ],
+      "inStock": true
+    },
+    {
+      "id": "13",
+      "name": "Kids Electric Car",
+      "category": "toys",
+      "price": 960,
+      "originalPrice": 1000,
+      "rating": 5,
+      "reviews": 65,
+      "description": "Kids' electric cars are battery-powered ride-on toys, typically designed for children aged 1–8, designed to look like miniature, real-life vehicles.",
+      "size": ["XS", "S", "M", "L", "XL"],
+      "image": [
+        "https://res.cloudinary.com/dxj264ncs/image/upload/v1771304177/kids-car_iyeuvq.png",
+        "angle1",
+        "angle2",
+        "angle3",
+        "angle4"
+      ],
+      "inStock": true
+    },
+    {
+      "id": "14",
+      "name": "Jr. Zoom Soccer Cleats",
+      "category": "men",
+      "price": 1160,
+      "originalPrice": 1200,
+      "rating": 5,
+      "reviews": 35,
+      "description": "Nike Jr. Zoom Soccer Cleats are high-performance, lightweight football boots specifically designed for children and young athletes. ",
+      "size": ["S", "M", "L", "XL"],
+      "image": [
+        "https://res.cloudinary.com/dxj264ncs/image/upload/v1771304187/shoes_o7wtif.png",
+        "angle1",
+        "angle2",
+        "angle3",
+        "angle4"
+      ],
+      "inStock": true
+    },
+    {
+      "id": "15",
+      "name": "GP11 Shooter USB Gamepad",
+      "category": "gaming",
+      "price": 660,
+      "originalPrice": 700,
+      "rating": 4.5,
+      "reviews": 55,
+      "description": "The Fantech GP11 Shooter is an ergonomic, budget-friendly wired USB gamepad designed for PC and PS3, often used for competitive gaming. ",
+      "size": ["XS", "S", "M", "L", "XL"],
+      "image": [
+        "https://res.cloudinary.com/dxj264ncs/image/upload/v1771304169/gamepad2_soekpf.png",
+        "https://res.cloudinary.com/dxj264ncs/image/upload/v1771304152/angle1_s33eoe.png",
+        "https://res.cloudinary.com/dxj264ncs/image/upload/v1771304152/angle2_v7rwvf.png",
+        "https://res.cloudinary.com/dxj264ncs/image/upload/v1771304152/angle3_yqe8vn.png",
+        "https://res.cloudinary.com/dxj264ncs/image/upload/v1771304153/angle4_khnbcj.png"
+      ],
+      "inStock": false
+    },
+    {
+      "id": "16",
+      "name": "Quilted Satin Jacket",
+      "category": "woman",
+      "price": 660,
+      "originalPrice": 670,
+      "rating": 4.5,
+      "reviews": 65,
+      "description": "A quilted jacket is a type of outerwear garment that is typically filled with synthetic or natural insulation and characterized by its signature quilted stitching",
+      "size": ["S", "M", "L", "XL"],
+      "image": [
+        "https://res.cloudinary.com/dxj264ncs/image/upload/v1771304173/jacket_i3gdsl.png",
+        "angle1",
+        "angle2",
+        "angle3",
+        "angle4"
+      ],
+      "inStock": true
+    },
+    {
+      "id": "17",
+      "name": "Havic HV G-92 Gamepad",
+      "category": "gaming",
+      "price": 192,
+      "originalPrice": 200,
+      "rating": 4,
+      "reviews": 150,
+      "description": "PlayStation 5 Controller Skin High quality vinyl with air channel adhesive for easy bubble free install & mess free removal Pressure sensitive.",
+      "size": ["XS", "S", "M", "L", "XL"],
+      "image": [
+        "https://res.cloudinary.com/dxj264ncs/image/upload/v1771304171/gamepad3_wwgled.png",
+        "https://res.cloudinary.com/dxj264ncs/image/upload/v1771304152/angle1_s33eoe.png",
+        "https://res.cloudinary.com/dxj264ncs/image/upload/v1771304152/angle2_v7rwvf.png",
+        "https://res.cloudinary.com/dxj264ncs/image/upload/v1771304152/angle3_yqe8vn.png",
+        "https://res.cloudinary.com/dxj264ncs/image/upload/v1771304153/angle4_khnbcj.png"
+      ],
+      "inStock": true
+    },
+    {
+      "id": "18",
+      "name": "GUCCI INTENSE OUD Perfume",
+      "category": "beauty",
+      "price": 102,
+      "originalPrice": 110,
+      "rating": 4,
+      "reviews": 60,
+      "description": "Intense Oud by Gucci is a Amber fragrance for women and men. Intense Oud was launched in 2016. The nose behind this fragrance is Aurelien Guichard.",
+      "size": ["S", "M", "L", "XL"],
+      "image": [
+        "https://res.cloudinary.com/dxj264ncs/image/upload/v1771304183/perfume_apusbb.png",
+        "angle1",
+        "angle2",
+        "angle3",
+        "angle4"
+      ],
+      "inStock": true
+    },
+    {
+      "id": "19",
+      "name": "Amazon wireless speakers",
+      "category": "headphone",
+      "price": 192,
+      "originalPrice": 200,
+      "rating": 4,
+      "reviews": 70,
+      "description": "The speaker's 2000mAh battery provides extended battery life, delivering up to 36 hours of playtime at 70% volume.",
+      "size": ["XS", "S", "M", "L", "XL"],
+      "image": [
+        "https://res.cloudinary.com/dxj264ncs/image/upload/v1771304156/bluetooth_w8njp0.png",
+        "angle1",
+        "angle2",
+        "angle3",
+        "angle4"
+      ],
+      "inStock": false
+    },
+    {
+      "id": "20",
+      "name": "PlayStation 5",
+      "category": "gaming",
+      "price": 600,
+      "originalPrice": 620,
+      "rating": 5,
+      "reviews": 40,
+      "description": "PS5 is designed for immersive gaming with features like 4K resolution at up to 120fps, ray tracing, and 3D audio.",
+      "size": ["S", "M", "L", "XL"],
+      "image": [
+        "https://res.cloudinary.com/dxj264ncs/image/upload/v1771304184/ps5_qlvvcd.png",
+        "angle1",
+        "angle2",
+        "angle3",
+        "angle4"
+      ],
+      "inStock": true
+    },
+    {
+      "id": "21",
+      "name": "iPhone 14 Series",
+      "category": "phone",
+      "price": 900,
+      "originalPrice": 950,
+      "rating": 5,
+      "reviews": 160,
+      "description": "iPhone 14 Series is a Standard models use the A15 Bionic chip, while Pro models feature the A16, Dynamic Island, and 48MP cameras. ",
+      "size": ["6.1", "6.7"],
+      "image": [
+        "https://res.cloudinary.com/dxj264ncs/image/upload/v1771307936/iphone14_rfci2t.png",
+        "https://res.cloudinary.com/dxj264ncs/image/upload/v1771308038/iphone_h2qmvn.png",
+        "angle2",
+        "angle3",
+        "angle4"
+      ],
+      "inStock": true
+    },
+    {
+      "id": "22",
+      "name": "BOAT headphone",
+      "category": "headphone",
+      "price": 200,
+      "originalPrice": 250,
+      "rating": 5,
+      "reviews": 120,
+      "description": "boat headphones are popular, budget-friendly audio devices in India known for their signature, bass-heavy sound, sleek ergonomic designs, and long-lasting battery life ",
+      "size": ["S", "M", "L", "XL"],
+      "image": [
+        "https://res.cloudinary.com/dxj264ncs/image/upload/v1771304173/headphone_zhg8uv.png",
+        "angle1",
+        "angle2",
+        "angle3",
+        "angle4"
+      ],
+      "inStock": true
+    },
+    {
+      "id": "23",
+      "name": "NoiseFit Halo plus",
+      "category": "smartwatch",
+      "price": 100,
+      "originalPrice": 110,
+      "rating": 5,
+      "reviews": 40,
+      "description": "NoiseFit Halo plus is Round dial, AMOLED display, premium metallic build, focused on style and advanced calling",
+      "size": ["S", "M", "L", "XL"],
+      "image": [
+        "https://res.cloudinary.com/dxj264ncs/image/upload/v1771304189/smartwatch1_iz6tlt.png",
+        "angle1",
+        "angle2",
+        "angle3",
+        "angle4"
+      ],
+      "inStock": true
+    },
+    {
+      "id": "24",
+      "name": "ColorFit Pro Series",
+      "category": "smartwatch",
+      "price": 130,
+      "originalPrice": 135,
+      "rating": 4.5,
+      "reviews": 30,
+      "description": "ColorFit Pro Series are the most popular models, featuring large displays (often rectangle/square), AMOLED screens, and Bluetooth calling.",
+      "size": ["S", "M", "L", "XL"],
+      "image": [
+        "https://res.cloudinary.com/dxj264ncs/image/upload/v1771304189/smartwatch2_az0sca.png",
+        "angle1",
+        "angle2",
+        "angle3",
+        "angle4"
+      ],
+      "inStock": false
+    }
+  ]
+}

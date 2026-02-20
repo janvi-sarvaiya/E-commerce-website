@@ -1,0 +1,20 @@
+@import "tailwindcss";
+
+@theme {
+  --color-orange: #db4444;
+}
+
+:root {
+  --swiper-pagination-color: #db4444;
+  --swiper-pagination-bullet-inactive-color: white;
+  --swiper-pagination-bullet-width: 12px;
+  --swiper-pagination-bullet-height: 12px;
+}
+
+.custom-pagination .swiper-pagination-bullet {
+  @apply w-2.5 h-2.5 bg-gray-400 opacity-100 rounded-full cursor-pointer transition;
+}
+
+.custom-pagination .swiper-pagination-bullet-active {
+  @apply bg-orange scale-110;
+}
