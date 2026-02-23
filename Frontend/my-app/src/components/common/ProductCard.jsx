@@ -1,10 +1,13 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../../features/cartSlice";
 import Rating from "@mui/material/Rating";
 
 import { IoMdHeartEmpty } from "react-icons/io";
 import { SlEye } from "react-icons/sl";
 
 export default function ProductCard({ product }) {
+  const dispatch = useDispatch();
   return (
     <div className="group space-y-4">
       <div className="relative w-68 h-62 bg-[#F5F5F5] grid place-content-center px-10 py-8 rounded">
@@ -13,13 +16,16 @@ export default function ProductCard({ product }) {
             -{product.discount}%
           </p>
         )}
-        {/* <img src={product.image[0]} alt={product.name} /> */}
+        <img src={product.image[0].url} alt={product.name} />
         <div className="absolute right-3 top-3 space-y-2 ">
           <IoMdHeartEmpty className="w-8 h-8 bg-white rounded-full p-1" />
           <SlEye className="w-8 h-8 bg-white rounded-full p-1" />
         </div>
         <div className="w-full absolute bottom-0 bg-black text-white rounded-b text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          <button className="py-2 font-medium cursor-pointer">
+          <button
+            className="py-2 font-medium cursor-pointer"
+            onClick={() => dispatch(addToCart(product))}
+          >
             Add To Cart
           </button>
         </div>

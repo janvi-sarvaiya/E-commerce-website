@@ -10,8 +10,8 @@ export default function About() {
   return (
     <>
       <Navbar />
-      <div className="">
-        <div className="mt-12 ml-40">
+      <div className="mt-45">
+        <div className="ml-40">
           <Breadcrumbs />
         </div>
 

@@ -14,7 +14,19 @@ import { GoArrowLeft } from "react-icons/go";
 import { GoArrowRight } from "react-icons/go";
 
 export default function ProductSlider() {
-  const { data: PRODUCTS } = useFetchProduct();
+  const { data: PRODUCTS, isLoading, error } = useFetchProduct();
+
+  if (isLoading) {
+    return <div className="loader"></div>;
+  }
+
+  if (error) {
+    return (
+      <p className="text-center text-orange text-2xl font-semibold">
+        Products not found!
+      </p>
+    );
+  }
 
   return (
     <div className="text-center">

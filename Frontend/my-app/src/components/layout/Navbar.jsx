@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { NavLink, Link } from "react-router-dom";
 import Badge from "@mui/material/Badge";
 import Logout from "../common/Logout";
 import { useUser } from "@clerk/clerk-react";
+import { useSelector } from "react-redux";
 
 import { FiSearch } from "react-icons/fi";
 import { IoMdHeartEmpty } from "react-icons/io";
@@ -14,12 +15,20 @@ import { FaRegStar } from "react-icons/fa";
 
 export default function Navbar() {
   const [show, setShow] = useState(false);
+  const totalQuantity = useSelector((state) => state.cart.totalQuantity);
 
   const { isSignedIn, user } = useUser();
-  console.log("user == ", user);
+  useEffect(() => {
+    if (isSignedIn && user) {
+      console.log("user is sign in => ", user);
+    } else {
+      console.log("user is logout.");
+    }
+  }, [user, isSignedIn]);
+
   return (
-    <div className="">
-      <div className="bg-black w-full text-white flex items-center justify-center p-2">
+    <div className="fixed w-full top-0 z-50">
+      <div className="bg-black text-white flex items-center justify-center p-2">
         <p className="text-sm flex-1 text-center">
           Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%!
           <span>
@@ -35,7 +44,7 @@ export default function Navbar() {
       </div>
 
       <div>
-        <nav className="flex items-center justify-around mt-5 p-3 w-full border-b border-slate-300">
+        <nav className="flex items-center justify-around pt-8 p-3 bg-white border-b border-slate-300">
           <h1 className="text-2xl font-bold">Exclusive</h1>
           <div className="flex gap-12">
             <NavLink
@@ -87,12 +96,12 @@ export default function Navbar() {
             {isSignedIn && (
               <div className="flex items-center gap-6">
                 <Link to="/wishlist">
-                  <Badge badgeContent={1} color="error">
+                  <Badge badgeContent={0} color="error">
                     <IoMdHeartEmpty className="w-7 h-7" />
                   </Badge>
                 </Link>
                 <Link to="/cart">
-                  <Badge badgeContent={1} color="error">
+                  <Badge badgeContent={totalQuantity} color="error">
                     <GrCart className="w-7 h-7" />
                   </Badge>
                 </Link>

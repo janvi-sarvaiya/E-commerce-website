@@ -1,7 +1,7 @@
 import Countdown from "react-countdown";
 
 export default function CountDownTimer() {
-  const targetDate = new Date("2026-02-21T23:59:59");
+  const targetDate = new Date("2026-03-06T23:59:59");
   return (
     <div>
       <Countdown

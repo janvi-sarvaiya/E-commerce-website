@@ -38,7 +38,7 @@ export default function Login() {
     <div>
       <Navbar />
 
-      <div className="flex mt-14 gap-40">
+      <div className="flex mt-42 gap-40">
         <div>
           <img src={signup} alt="signup" className="w-220 h-160" />
         </div>

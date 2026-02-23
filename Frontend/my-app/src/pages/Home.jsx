@@ -6,12 +6,12 @@ import ProductSlider from "../components/slider/ProductSlider";
 import MusicBanner from "../components/common/MusicBanner";
 
 import { MdArrowForwardIos } from "react-icons/md";
- 
+
 export default function Home() {
   return (
     <>
       <Navbar />
-      <div className="max-w-390 mx-auto px-10">
+      <div className="max-w-390 mx-auto px-10 mt-28">
         <div className="grid grid-cols-4 gap-15">
           <div className="border-r border-slate-400 pr-6">
             <ul className="space-y-4 mt-10">
