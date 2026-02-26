@@ -11,6 +11,19 @@ import { TbTruckDelivery } from "react-icons/tb";
 import { RiCustomerServiceLine } from "react-icons/ri";
 import { RiShieldCheckLine } from "react-icons/ri";
 
+import { VscGame } from "react-icons/vsc";
+import { HiOutlineComputerDesktop } from "react-icons/hi2";
+import { RiArmchairLine } from "react-icons/ri";
+import { SlUserFemale } from "react-icons/sl";
+import { SlUser } from "react-icons/sl";
+import { MdOutlineFoodBank } from "react-icons/md";
+import { CiCamera } from "react-icons/ci";
+import { TbHorseToy } from "react-icons/tb";
+import { RiBrushAiLine } from "react-icons/ri";
+import { IoIosPhonePortrait } from "react-icons/io";
+import { CiHeadphones } from "react-icons/ci";
+import { IoWatchOutline } from "react-icons/io5";
+
 export const ABOUTDETAIL = [
   {
     icon: BsShop,
@@ -92,5 +105,56 @@ export const TEAMS = [
     image: woman,
     name: "Olivia Harper",
     role: "Human resources manager",
+  },
+];
+
+export const CATEGORYICON = [
+  {
+    cname: "gaming",
+    icon: VscGame,
+  },
+  {
+    cname: "computer",
+    icon: HiOutlineComputerDesktop,
+  },
+  {
+    cname: "furniture",
+    icon: RiArmchairLine,
+  },
+  {
+    cname: "woman",
+    icon: SlUserFemale,
+  },
+  {
+    cname: "men",
+    icon: SlUser,
+  },
+  {
+    cname: "food",
+    icon: MdOutlineFoodBank,
+  },
+  {
+    cname: "camera",
+    icon: CiCamera,
+  },
+  {
+    cname: "toys",
+    icon: TbHorseToy,
+  },
+  {
+    cname: "beauty",
+    icon: RiBrushAiLine,
+  },
+  {
+    cname: "phone",
+    icon: IoIosPhonePortrait,
+  },
+  {
+    cname: "headphone",
+    icon: CiHeadphones,
+  },
+  {
+    cname: "smartwatch",
+    icon: IoWatchOutline,
   },
 ];

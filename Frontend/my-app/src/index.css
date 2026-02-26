@@ -18,3 +18,15 @@
 .custom-pagination .swiper-pagination-bullet-active {
   @apply bg-orange scale-110;
 }
+
+.productListing-pagination .swiper-pagination-bullet {
+  @apply w-2.5 h-2.5 bg-gray-400 opacity-100 rounded-full cursor-pointer transition;
+}
+
+.productListing-pagination .swiper-pagination-bullet-active {
+  @apply bg-orange scale-110;
+}
+
+.product-grid-swiper .swiper-wrapper {
+  row-gap: 30px;
+}

@@ -10,6 +10,8 @@ import Account from "./pages/Account";
 import Cart from "./pages/Cart";
 import Shop from "./pages/Shop";
 import Wishlist from "./pages/Wishlist";
+import ProductDetail from "./pages/ProductDetail";
+import CategoryPage from "./pages/CategoryPage";
 
 const router = createBrowserRouter([
   {
@@ -43,6 +45,14 @@ const router = createBrowserRouter([
   {
     path: "/shop",
     element: <Shop />,
+  },
+  {
+    path: "/shop/:id",
+    element: <ProductDetail />,
+  },
+  {
+    path: "/category/:category",
+    element: <CategoryPage />,
   },
   {
     path: "/cart",

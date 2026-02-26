@@ -1,39 +1,29 @@
 import React from "react";
-import Title from "../common/Title";
-import CountDownTimer from "../common/CountDownTimer";
-import ProductCard from "../product/ProductCard";
 import { useFetchProduct } from "../../api/HTTP_API.js";
-import { Link } from "react-router-dom";
-
+import Title from "../common/Title";
+import ProductCard from "./ProductCard";
 import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css/pagination";
-import { Pagination } from "swiper/modules";
 import "swiper/css";
+import "swiper/css/grid";
+import "swiper/css/pagination";
+import { Grid, Pagination } from "swiper/modules";
+import { Link } from "react-router-dom";
 
 import { GoArrowLeft } from "react-icons/go";
 import { GoArrowRight } from "react-icons/go";
 
-export default function ProductSlider() {
-  const { data: PRODUCTS, isLoading, error } = useFetchProduct();
+export default function ProductListing() {
+  const { data: PRODUCTS, isLoading } = useFetchProduct();
 
   if (isLoading) {
     return <div className="loader"></div>;
   }
 
-  if (error) {
-    return (
-      <p className="text-center text-orange text-2xl font-semibold">
-        Products not found!
-      </p>
-    );
-  }
-
   return (
     <div className="text-center">
-      <Title title="Today's" />
-      <div className="flex justify-between items-baseline-last gap-21.5">
-        <h1 className="text-4xl font-semibold mt-6">Flash Sales</h1>
-        <CountDownTimer />
+      <Title title="Our Products" />
+      <div className="flex justify-between">
+        <h1 className="text-4xl font-semibold mt-5">Explore Our Products</h1>
         <div className="flex-1 flex items-center justify-end gap-3">
           <GoArrowLeft className="w-10 h-10 bg-[#F5F5F5] rounded-full p-1.5" />
           <GoArrowRight className="w-10 h-10 bg-[#F5F5F5] rounded-full p-1.5" />
@@ -41,18 +31,23 @@ export default function ProductSlider() {
       </div>
       <div className="mt-10">
         <Swiper
+          className="product-grid-swiper"
           slidesPerView={5}
+          grid={{
+            rows: 2,
+            fill: "row",
+          }}
           spaceBetween={20}
-          pagination={{ el: ".custom-pagination", clickable: true }}
-          modules={[Pagination]}
+          pagination={{ el: ".productListing-pagination", clickable: true }}
+          modules={[Grid, Pagination]}
         >
-          {PRODUCTS?.slice(0, 10).map((product) => (
+          {PRODUCTS?.slice(8).map((product) => (
             <SwiperSlide key={product.product_id}>
               <ProductCard product={product} />
             </SwiperSlide>
           ))}
         </Swiper>
-        <div className="custom-pagination mt-6 text-center mb-10"></div>
+        <div className="productListing-pagination mt-6 text-center mb-10"></div>
         <Link
           to="/shop"
           className="bg-orange py-4 px-12 rounded font-medium text-white"

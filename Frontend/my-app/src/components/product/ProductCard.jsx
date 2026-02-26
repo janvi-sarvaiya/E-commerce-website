@@ -2,6 +2,7 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../features/cartSlice";
 import Rating from "@mui/material/Rating";
+import { Link } from "react-router-dom";
 
 import { IoMdHeartEmpty } from "react-icons/io";
 import { SlEye } from "react-icons/sl";
@@ -16,7 +17,9 @@ export default function ProductCard({ product }) {
             -{product.discount}%
           </p>
         )}
-        <img src={product.image[0].url} alt={product.name} />
+        <Link to={`/shop/${product.product_id}`}>
+          <img src={product.image[0].url} alt={product.name} />
+        </Link>
         <div className="absolute right-3 top-3 space-y-2 ">
           <IoMdHeartEmpty className="w-8 h-8 bg-white rounded-full p-1" />
           <SlEye className="w-8 h-8 bg-white rounded-full p-1" />
