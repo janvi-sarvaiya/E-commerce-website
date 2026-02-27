@@ -24,13 +24,11 @@ export default function ProductCard({ product }) {
           <IoMdHeartEmpty className="w-8 h-8 bg-white rounded-full p-1" />
           <SlEye className="w-8 h-8 bg-white rounded-full p-1" />
         </div>
-        <div className="w-full absolute bottom-0 bg-black text-white rounded-b text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          <button
-            className="py-2 font-medium cursor-pointer"
-            onClick={() => dispatch(addToCart(product))}
-          >
-            Add To Cart
-          </button>
+        <div
+          className="w-full absolute bottom-0 bg-black text-white rounded-b text-center opacity-0 py-2 font-medium cursor-pointer group-hover:opacity-100 transition-opacity duration-300"
+          onClick={() => dispatch(addToCart({ product, quantity: 1 }))}
+        >
+          Add To Cart
         </div>
       </div>
       <div className="space-y-1 text-left">
