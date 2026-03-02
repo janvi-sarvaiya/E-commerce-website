@@ -11,16 +11,29 @@ import Footer from "../components/layout/Footer";
 
 import { IoMdHeartEmpty } from "react-icons/io";
 import { TbTruckDelivery } from "react-icons/tb";
-import { LuRefreshCcw } from "react-icons/lu"; 
+import { LuRefreshCcw } from "react-icons/lu";
 import ProductImageGallery from "../components/product/ProductImageGallery";
 
 export default function ProductDetail() {
   const dispatch = useDispatch();
   const { id } = useParams();
   const [quantity, setQunatity] = useState(1);
+  const [selectedSize, setSelectedSize] = useState("");
+  const [sizeError, setSizeError] = useState(false);
   const { data: PRODUCT } = useFetchProduct();
 
   const product = PRODUCT?.find(({ product_id }) => product_id === +id);
+
+  const handleAddToCart = (e) => {
+    e.preventDefault();
+    if (!selectedSize) {
+      setSizeError(true);
+      return;
+    }
+    if (product.inStock) {
+      dispatch(addToCart({ product, quantity, productSize: selectedSize }));
+    }
+  };
 
   return (
     <>
@@ -55,20 +68,25 @@ export default function ProductDetail() {
               {product.size.map((val) => (
                 <span
                   key={val}
-                  className="text-[16px] border w-10 h-9 text-center place-content-center rounded border-gray-400
-                   hover:bg-orange hover:text-white transition duration-300"
+                  onClick={() => {
+                    setSelectedSize(val);
+                    setSizeError(false);
+                  }}
+                  className={`text-[16px] border w-10 h-9 text-center place-content-center rounded border-gray-400
+                    transition duration-300 cursor-pointer ${selectedSize === val ? "bg-orange text-white" : "hover:bg-orange hover:text-white"}`}
                 >
                   {val}
                 </span>
               ))}
             </div>
+            {sizeError && (
+              <p className="mt-1.5 text-red-500">Please Select a Size!</p>
+            )}
 
             <div className="mt-5 flex items-center gap-4">
               <QunatityBox quantity={quantity} setQunatity={setQunatity} />
               <button
-                onClick={() =>
-                  product.inStock && dispatch(addToCart({ product, quantity }))
-                }
+                onClick={handleAddToCart}
                 className={`text-white py-2.5 px-12 rounded ${product.inStock ? "bg-orange cursor-pointer" : "bg-[#ca3c3c] cursor-not-allowed"}`}
               >
                 Buy Now
