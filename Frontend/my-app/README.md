@@ -18,3 +18,5 @@ If you are developing a production application, we recommend using TypeScript wi
 website figma : https://www.figma.com/design/KLq1Nh34ZJi1xU7GBYBrWe/Full-E-Commerce-Website-UI-UX-Design--Community-?node-id=1-3&p=f&t=qNbsWm8rcblmWeSG-0
 
 cloud products dashboard : https://cloud.strapi.io/projects/products-de400c2468/deployments
+
+https://great-gem-9c1f636479.strapiapp.com/api/e-commerces?populate=*   

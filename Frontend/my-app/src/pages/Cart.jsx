@@ -1,13 +1,17 @@
-import React, { useMemo } from "react";
+import React, { useMemo, useState } from "react";
 import Navbar from "../components/layout/Navbar";
 import Breadcrumbs from "../components/common/Breadcrumbs";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import Footer from "../components/layout/Footer";
 import { Link, useNavigate } from "react-router-dom";
-import { Empty } from "antd";
+
+import { updateCartQuantity } from "../features/cartSlice";
+import CartTable from "../components/common/CartTable";
 
 export default function Cart() {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const [tempQuantity, setTempQuantity] = useState({});
   const cartItem = useSelector((state) => state.cart.cartItem);
 
   const totalPrice = useMemo(() => {
@@ -22,46 +26,36 @@ export default function Cart() {
     navigate("/checkout");
   };
 
+  const handleUpdateCart = (e) => {
+    e.preventDefault();
+    if (cartItem.length == 0) {
+      return;
+    }
+    Object.keys(tempQuantity).forEach((key) => {
+      const [product_id, productSize] = key.split("-");
+      dispatch(
+        updateCartQuantity({
+          product_id: +product_id,
+          quantity: +tempQuantity[key],
+          productSize,
+        }),
+      );
+    });
+    console.log("update cart successfully");
+    setTempQuantity({});
+  };
+
   return (
     <>
       <Navbar />
       <div className="max-w-390 mx-auto px-10 mt-45">
         <Breadcrumbs />
         <div className="mt-12">
-          <div className="grid grid-cols-4 items-center p-5 px-10 shadow-md inset-shadow-sm">
-            <p>Product</p>
-            <p className="text-right">Price</p>
-            <p className="text-right">Quantity</p>
-            <p className="text-right">Subtotal</p>
-          </div>
-          <div className="space-y-8 mt-8">
-            {cartItem.length == 0 ? (
-              <Empty
-                className="flex flex-col items-center"
-                description="Your Cart is Empty!"
-                image="https://res.cloudinary.com/dxj264ncs/image/upload/v1772445350/emptycart_zb42tu.png"
-              />
-            ) : (
-              cartItem?.map(({ product_id, name, price, quantity, image }) => (
-                <div
-                  key={product_id}
-                  className="grid grid-cols-4 items-center p-4 px-10 shadow-md inset-shadow-sm"
-                >
-                  <p className="flex items-center gap-5">
-                    <img src={image[0]?.url} alt={name} className="w-14 h-12" />
-                    {name}
-                  </p>
-                  <p className="text-right">${price}</p>
-                  <input
-                    type="number"
-                    value={quantity}
-                    className="max-w-16 border p-2 px-3 rounded border-gray-400 place-self-end-safe"
-                  />
-                  <p className="text-right">${price * quantity}</p>
-                </div>
-              ))
-            )}
-          </div>
+          <CartTable
+            cartItem={cartItem}
+            tempQuantity={tempQuantity}
+            setTempQuantity={setTempQuantity}
+          />
 
           <div className="mt-7 flex justify-between items-center">
             <Link
@@ -70,9 +64,12 @@ export default function Cart() {
             >
               Return To Shop
             </Link>
-            <Link to="" className="border rounded py-3 px-10 border-gray-400">
+            <button
+              onClick={handleUpdateCart}
+              className={`border rounded py-3 px-10 border-gray-400 ${cartItem.length == 0 ? "cursor-not-allowed" : "cursor-pointer"}`}
+            >
               Update Cart
-            </Link>
+            </button>
           </div>
 
           <div className="flex justify-between mt-18">
