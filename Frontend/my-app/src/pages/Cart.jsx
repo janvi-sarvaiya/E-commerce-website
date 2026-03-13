@@ -6,7 +6,8 @@ import Footer from "../components/layout/Footer";
 import { Link, useNavigate } from "react-router-dom";
 
 import { updateCartQuantity } from "../features/cartSlice";
-import CartTable from "../components/common/CartTable";
+import CartTable from "../components/product/CartTable";
+import TotalPriceTable from "../components/common/TotalPriceTable";
 
 export default function Cart() {
   const navigate = useNavigate();
@@ -86,21 +87,13 @@ export default function Cart() {
               </button>
             </div>
 
-            <div className="border w-118 p-6 space-y-4 rounded text-center">
+            <div className="border w-118 p-6 rounded text-center">
               <h1 className="text-xl text-left mb-6">Cart Total</h1>
-              <p className="flex justify-between border-b border-b-gray-400 pb-3">
-                Subtotal : <span>${totalPrice}</span>
-              </p>
-              <p className="flex justify-between border-b border-b-gray-400 pb-3">
-                Shipping: <span>Free</span>
-              </p>
-              <p className="flex justify-between">
-                Total : <span>${totalPrice}</span>
-              </p>
+              <TotalPriceTable totalPrice={totalPrice} />
               <button
                 to="/checkout"
                 onClick={handleCheckout}
-                className={`bg-orange text-white py-3 px-8 rounded mt-1 ${cartItem.length == 0 ? "cursor-not-allowed" : "cursor-pointer"}`}
+                className={`bg-orange text-white py-3 px-8 rounded mt-3 ${cartItem.length == 0 ? "cursor-not-allowed" : "cursor-pointer"}`}
               >
                 Procees to checkout
               </button>
