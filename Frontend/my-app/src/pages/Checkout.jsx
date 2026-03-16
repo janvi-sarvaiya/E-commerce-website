@@ -11,6 +11,7 @@ import { clearCart } from "../features/cartSlice";
 import { useForm } from "react-hook-form";
 import { MdOutlineErrorOutline } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 export default function Checkout() {
   const navigate = useNavigate();
@@ -52,11 +53,13 @@ export default function Checkout() {
         orderItems: cartItem,
       };
       mutate(placeOrderData);
+      toast.success("Place Order Successfully !");
       reset();
       dispatch(clearCart());
       navigate("/ordercompleted");
     } catch (error) {
       console.log(error);
+      toast.error("Could not place order. Try again!");
     }
   };
   return (

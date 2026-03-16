@@ -4,6 +4,7 @@ import Breadcrumbs from "../components/common/Breadcrumbs";
 import { useDispatch, useSelector } from "react-redux";
 import Footer from "../components/layout/Footer";
 import { Link, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 import { updateCartQuantity } from "../features/cartSlice";
 import CartTable from "../components/product/CartTable";
@@ -22,6 +23,7 @@ export default function Cart() {
   const handleCheckout = (e) => {
     e.preventDefault();
     if (cartItem.length == 0) {
+      toast("Please Select a Items !");
       return;
     }
     navigate("/checkout");
@@ -30,6 +32,7 @@ export default function Cart() {
   const handleUpdateCart = (e) => {
     e.preventDefault();
     if (cartItem.length == 0) {
+      toast("Please Select a Items !");
       return;
     }
     Object.keys(tempQuantity).forEach((key) => {
@@ -42,7 +45,7 @@ export default function Cart() {
         }),
       );
     });
-    console.log("update cart successfully");
+    toast.success("Update Cart Successfully !");
     setTempQuantity({});
   };
 

@@ -6,6 +6,7 @@ import signup from "../assets/backgroundImage/signup.png";
 import { useSignIn } from "@clerk/clerk-react";
 
 import TextField from "@mui/material/TextField";
+import { toast } from "react-toastify";
 
 export default function Login() {
   const navigate = useNavigate();
@@ -30,7 +31,11 @@ export default function Login() {
       }
       navigate("/home");
     } catch (error) {
-      console.log(error);
+      if (error?.message?.includes("incorrect")) {
+        toast.error("Invalid email or password. Please try again.");
+      } else {
+        toast.error("Something went wrong. Please try again.");
+      }
     }
   };
 
@@ -54,6 +59,7 @@ export default function Login() {
                 type="email"
                 value={loginData.email}
                 onChange={handleChange}
+                required
               />
               <TextField
                 label="Password"
@@ -62,6 +68,7 @@ export default function Login() {
                 type="password"
                 value={loginData.password}
                 onChange={handleChange}
+                required
               />
             </div>
             <div className="mt-8 flex items-center justify-between">

@@ -1,5 +1,6 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ProtectedRoute from "./components/layout/ProtectedRoute";
+import { ToastContainer } from 'react-toastify';
 
 import Home from "./pages/Home";
 import Signup from "./pages/Signup";
@@ -93,6 +94,7 @@ function App() {
   return (
     <>
       <RouterProvider router={router} />
+      <ToastContainer />
     </>
   );
 }

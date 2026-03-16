@@ -5,6 +5,7 @@ import signup from "../assets/backgroundImage/signup.png";
 import Footer from "../components/layout/Footer";
 import { useSignUp } from "@clerk/clerk-react";
 import OTPInput from "react-otp-input";
+import { toast } from "react-toastify";
 
 import TextField from "@mui/material/TextField";
 
@@ -41,15 +42,27 @@ export default function Signup() {
         strategy: "email_code",
       });
 
+      toast("Verify with Your Email Address!");
       setVerify(true);
     } catch (error) {
-      console.log(error);
+      if (
+        error?.message &&
+        error?.message.includes("That email address is taken")
+      ) {
+        toast.error("This Email is Already Registered !");
+      } else {
+        toast.error("Something went wrong. Please try again.");
+      }
     }
   };
 
   const handleVerify = async (e) => {
     e.preventDefault();
     try {
+      if (!code) {
+        toast.error("Please Verify Your Email Address!");
+        return;
+      }
       await signUp.attemptEmailAddressVerification({
         code: code,
       });
@@ -78,6 +91,7 @@ export default function Signup() {
                 variant="standard"
                 value={formData.name}
                 onChange={handleChange}
+                required
               />
               <TextField
                 name="email"
@@ -86,6 +100,7 @@ export default function Signup() {
                 type="email"
                 value={formData.email}
                 onChange={handleChange}
+                required
               />
               <TextField
                 name="password"
@@ -94,6 +109,7 @@ export default function Signup() {
                 type="password"
                 value={formData.password}
                 onChange={handleChange}
+                required
               />
             </div>
 

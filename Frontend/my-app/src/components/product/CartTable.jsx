@@ -2,6 +2,7 @@ import { Empty } from "antd";
 import { IoCloseSharp } from "react-icons/io5";
 import { deleteCart } from "../../features/cartSlice";
 import { useDispatch } from "react-redux";
+import { toast } from "react-toastify";
 
 export default function CartTable({ cartItem, tempQuantity, setTempQuantity }) {
   const dispatch = useDispatch();
@@ -52,9 +53,10 @@ export default function CartTable({ cartItem, tempQuantity, setTempQuantity }) {
                 />
                 <p className="text-right">${price * quantity}</p>
                 <button
-                  onClick={() =>
-                    dispatch(deleteCart({ product_id, productSize }))
-                  }
+                  onClick={() => {
+                    dispatch(deleteCart({ product_id, productSize }));
+                    toast.success("Delete Cart Successfully !");
+                  }}
                   className="absolute -right-2.5 -top-2 bg-orange text-white rounded-full p-1 cursor-pointer"
                 >
                   <IoCloseSharp size={25} />

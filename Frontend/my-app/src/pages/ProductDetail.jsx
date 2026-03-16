@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { useFetchProduct } from "../api/HTTP_API";
 import { addToCart } from "../features/cartSlice";
 import { useDispatch } from "react-redux";
@@ -8,19 +8,23 @@ import Breadcrumbs from "../components/common/Breadcrumbs";
 import Rating from "@mui/material/Rating";
 import QunatityBox from "../components/product/QunatityBox";
 import Footer from "../components/layout/Footer";
+import { useUser } from "@clerk/clerk-react";
 
 import { IoMdHeartEmpty } from "react-icons/io";
 import { TbTruckDelivery } from "react-icons/tb";
 import { LuRefreshCcw } from "react-icons/lu";
 import ProductImageGallery from "../components/product/ProductImageGallery";
+import { toast } from "react-toastify";
 
 export default function ProductDetail() {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const { id } = useParams();
   const [quantity, setQunatity] = useState(1);
   const [selectedSize, setSelectedSize] = useState("");
   const [sizeError, setSizeError] = useState(false);
   const { data: PRODUCT } = useFetchProduct();
+  const { user } = useUser();
 
   const product = PRODUCT?.find(({ product_id }) => product_id === +id);
 
@@ -30,8 +34,14 @@ export default function ProductDetail() {
       setSizeError(true);
       return;
     }
+    if (!user) {
+      toast.error("Please Login to Add Items!");
+      navigate("/login");
+      return;
+    }
     if (product.inStock) {
       dispatch(addToCart({ product, quantity, productSize: selectedSize }));
+      toast.success("Added to cart successfully!");
     }
   };
 
