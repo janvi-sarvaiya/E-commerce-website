@@ -38,7 +38,7 @@ const router = createBrowserRouter([
     element: <Contact />,
   },
   {
-    path: "/account",
+    path: "/my-account",
     element: (
       <ProtectedRoute>
         <Account />

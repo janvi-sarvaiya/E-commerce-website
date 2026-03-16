@@ -79,7 +79,7 @@ export default function Login() {
                 Log in
               </button>
 
-              <Link to="/account" className="text-orange">
+              <Link to="/my-account" className="text-orange">
                 Forget Password?
               </Link>
             </div>

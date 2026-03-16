@@ -114,7 +114,7 @@ export default function Navbar() {
                   </button>
                   {show && (
                     <div className="absolute bg-black/45 backdrop-blur-lg text-white w-58 -right-5 top-12 flex flex-col p-4 space-y-4 rounded z-50">
-                      <Link to="/account" className="flex items-center gap-3">
+                      <Link to="/my-account" className="flex items-center gap-3">
                         <GoPerson className="w-6 h-6" /> Manage My Account
                       </Link>
                       <Link to="/cart" className="flex items-center gap-3">
