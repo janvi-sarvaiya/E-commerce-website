@@ -40,7 +40,7 @@ export default function Footer() {
 
         <div className="flex flex-col">
           <h2 className="text-xl font-bold mb-6">Account</h2>
-          <Link to="/account">My Account</Link>
+          <Link to="/my-account">My Account</Link>
           <p className="my-3">
             <Link to="/login">Login</Link> / <Link to="/">Register</Link>
           </p>

@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function QunatityBox({ quantity, setQunatity }) {
+export default function QuantityBox({ quantity, setQunatity }) {
   return (
     <div className="flex items-center gap-8 border rounded border-gray-400 ">
       <button
