@@ -26,6 +26,9 @@ export default function CartTable({ cartItem, tempQuantity, setTempQuantity }) {
             className="flex flex-col items-center bg-[#F5F5F5] p-2"
             description="Your Cart is Empty!"
             image="https://res.cloudinary.com/dxj264ncs/image/upload/v1772445350/emptycart_zb42tu.png"
+            imageStyle={{
+              height: "160px",
+            }}
           />
         ) : (
           cartItem?.map(
