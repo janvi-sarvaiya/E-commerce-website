@@ -43,7 +43,7 @@ export default function ProductListing() {
         >
           {PRODUCTS?.slice(8).map((product) => (
             <SwiperSlide key={product.product_id}>
-              <ProductCard product={product} />
+              <ProductCard product={product} key={product.product_id} />
             </SwiperSlide>
           ))}
         </Swiper>

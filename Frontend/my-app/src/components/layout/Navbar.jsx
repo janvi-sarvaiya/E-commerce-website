@@ -15,6 +15,9 @@ import { FaRegStar } from "react-icons/fa";
 
 export default function Navbar() {
   const [show, setShow] = useState(false);
+  const wishlistProducts = useSelector(
+    (state) => state.wishlist.wishlistProducts,
+  );
   const totalQuantity = useSelector((state) => state.cart.totalQuantity);
 
   const { isSignedIn, user } = useUser();
@@ -96,7 +99,7 @@ export default function Navbar() {
             {isSignedIn && (
               <div className="flex items-center gap-6">
                 <Link to="/wishlist">
-                  <Badge badgeContent={0} color="error">
+                  <Badge badgeContent={wishlistProducts.length} color="error">
                     <IoMdHeartEmpty className="w-7 h-7" />
                   </Badge>
                 </Link>
@@ -114,7 +117,10 @@ export default function Navbar() {
                   </button>
                   {show && (
                     <div className="absolute bg-black/45 backdrop-blur-lg text-white w-58 -right-5 top-12 flex flex-col p-4 space-y-4 rounded z-50">
-                      <Link to="/my-account" className="flex items-center gap-3">
+                      <Link
+                        to="/my-account"
+                        className="flex items-center gap-3"
+                      >
                         <GoPerson className="w-6 h-6" /> Manage My Account
                       </Link>
                       <Link to="/cart" className="flex items-center gap-3">
