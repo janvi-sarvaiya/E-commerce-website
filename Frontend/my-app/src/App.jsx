@@ -1,6 +1,6 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ProtectedRoute from "./components/layout/ProtectedRoute";
-import { ToastContainer } from 'react-toastify';
+import { ToastContainer } from "react-toastify";
 
 import Home from "./pages/Home";
 import Signup from "./pages/Signup";
@@ -15,6 +15,7 @@ import ProductDetail from "./pages/ProductDetail";
 import CategoryPage from "./pages/CategoryPage";
 import Checkout from "./pages/Checkout";
 import OrderCompleted from "./pages/OrderCompleted";
+import NotFound from "./pages/NotFound";
 
 const router = createBrowserRouter([
   {
@@ -58,6 +59,10 @@ const router = createBrowserRouter([
     element: <CategoryPage />,
   },
   {
+    path: "*",
+    element: <NotFound />,
+  },
+  {
     path: "/cart",
     element: (
       <ProtectedRoute>
@@ -80,7 +85,8 @@ const router = createBrowserRouter([
         <Checkout />
       </ProtectedRoute>
     ),
-  }, {
+  },
+  {
     path: "/ordercompleted",
     element: (
       <ProtectedRoute>

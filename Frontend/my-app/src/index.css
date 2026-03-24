@@ -30,3 +30,9 @@
 .product-grid-swiper .swiper-wrapper {
   row-gap: 30px;
 }
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}
