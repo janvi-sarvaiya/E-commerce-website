@@ -1,21 +1,22 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { useFetchProduct } from "../api/HTTP_API";
 import { addToCart } from "../features/cartSlice";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import Navbar from "../components/layout/Navbar";
 import Breadcrumbs from "../components/common/Breadcrumbs";
 import Rating from "@mui/material/Rating";
 import QuantityBox from "../components/product/QuantityBox";
 import Footer from "../components/layout/Footer";
 import { useUser } from "@clerk/clerk-react";
-
-import { IoMdHeartEmpty } from "react-icons/io";
-import { TbTruckDelivery } from "react-icons/tb";
-import { LuRefreshCcw } from "react-icons/lu";
 import ProductImageGallery from "../components/product/ProductImageGallery";
 import { toast } from "react-toastify";
+import { addToWishlist, removeToWishlist } from "../features/wishlistSlice";
 
+import { IoMdHeartEmpty } from "react-icons/io";
+import { IoMdHeart } from "react-icons/io";
+import { TbTruckDelivery } from "react-icons/tb";
+import { LuRefreshCcw } from "react-icons/lu";
 
 export default function ProductDetail() {
   const dispatch = useDispatch();
@@ -43,6 +44,34 @@ export default function ProductDetail() {
     if (product.inStock) {
       dispatch(addToCart({ product, quantity, productSize: selectedSize }));
       toast.success("Added to cart successfully!");
+    }
+  };
+
+  const wishlistProducts = useSelector(
+    (state) => state.wishlist.wishlistProducts,
+  );
+
+  const isWishlistItem = wishlistProducts.some(
+    (item) => item.product_id === product.product_id,
+  );
+
+  useEffect(() => {
+    if (isWishlistItem) {
+      return;
+    }
+  }, [isWishlistItem]);
+
+  const handleWishlistToggle = () => {
+    if (!user) {
+      toast.error("Please Login to Add Item in Wishlist!");
+      navigate("/login");
+      return;
+    } else {
+      if (isWishlistItem) {
+        dispatch(removeToWishlist({ product_id: product.product_id }));
+      } else {
+        dispatch(addToWishlist(product));
+      }
     }
   };
 
@@ -102,8 +131,15 @@ export default function ProductDetail() {
               >
                 Buy Now
               </button>
-              <button className="border border-gray-400 rounded p-1.5">
-                <IoMdHeartEmpty size={32} />
+              <button
+                onClick={handleWishlistToggle}
+                className="border border-gray-400 rounded p-1.5"
+              >
+                {isWishlistItem ? (
+                  <IoMdHeart size={32} className="text-orange" />
+                ) : (
+                  <IoMdHeartEmpty size={32} className="" />
+                )}
               </button>
             </div>
 

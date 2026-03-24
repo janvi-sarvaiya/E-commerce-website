@@ -11,7 +11,7 @@ import { IoMdHeart } from "react-icons/io";
 import { BsTrash3 } from "react-icons/bs";
 import { toast } from "react-toastify";
 
-function ProductCard({ product, isWishlistPage = false }) { 
+function ProductCard({ product, isWishlistPage = false }) {
   const { user } = useUser();
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -25,7 +25,7 @@ function ProductCard({ product, isWishlistPage = false }) {
 
   useEffect(() => {
     if (isWishlistItem) {
-      console.log("wishlist : ", isWishlistItem);
+      return;
     }
   }, [isWishlistItem]);
 
