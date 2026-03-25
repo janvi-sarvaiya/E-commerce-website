@@ -1,17 +1,13 @@
-import React from "react";
-import Navbar from "../components/layout/Navbar";
 import Title from "../components/common/Title";
 import Breadcrumbs from "../components/common/Breadcrumbs";
 import { useFetchProduct } from "../api/HTTP_API";
 import ProductCard from "../components/product/ProductCard";
-import Footer from "../components/layout/Footer";
 
 export default function Shop() {
   const { data: PRODUCTS } = useFetchProduct();
 
   return (
     <>
-      <Navbar />
       <div className="max-w-390 mx-auto px-10 mt-40">
         <Breadcrumbs />
         <div className="mt-10">
@@ -23,7 +19,6 @@ export default function Shop() {
           ))}
         </div>
       </div>
-      <Footer />
     </>
   );
 }

@@ -1,4 +1,3 @@
-import React from "react";
 import Title from "../common/Title";
 import { useFetchProduct } from "../../api/HTTP_API";
 import { Link } from "react-router-dom";

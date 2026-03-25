@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import Qrcode from "../../assets/icon/Qrcode.png";
 import gpay from "../../assets/icon/g-pay.png";
@@ -42,7 +41,7 @@ export default function Footer() {
           <h2 className="text-xl font-bold mb-6">Account</h2>
           <Link to="/my-account">My Account</Link>
           <p className="my-3">
-            <Link to="/login">Login</Link> / <Link to="/">Register</Link>
+            <Link to="/login">Login</Link> / <Link to="/signup">Register</Link>
           </p>
           <Link to="/cart">Cart</Link>
           <Link to="/wishlist" className="my-3">
@@ -53,11 +52,11 @@ export default function Footer() {
 
         <div className="flex flex-col">
           <h2 className="text-xl font-bold mb-6">Quick Link</h2>
-          <Link to="/home">Privacy Policy</Link>
-          <Link to="/home" className="my-4">
+          <Link to="/">Privacy Policy</Link>
+          <Link to="/" className="my-4">
             Terms Of Use
           </Link>
-          <Link to="/home" className="mb-4">
+          <Link to="/" className="mb-4">
             FAQ
           </Link>
           <Link to="/contact">Contact</Link>

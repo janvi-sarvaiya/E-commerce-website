@@ -2,6 +2,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ProtectedRoute from "./components/layout/ProtectedRoute";
 import { ToastContainer } from "react-toastify";
 
+import MainLayout from "./layouts/MainLayout";
 import Home from "./pages/Home";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
@@ -20,79 +21,85 @@ import NotFound from "./pages/NotFound";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Signup />,
-  },
-  {
-    path: "/login",
-    element: <Login />,
-  },
-  {
-    path: "/home",
-    element: <Home />,
-  },
-  {
-    path: "/about",
-    element: <About />,
-  },
-  {
-    path: "/contact",
-    element: <Contact />,
-  },
-  {
-    path: "/my-account",
-    element: (
-      <ProtectedRoute>
-        <Account />
-      </ProtectedRoute>
-    ),
-  },
-  {
-    path: "/shop",
-    element: <Shop />,
-  },
-  {
-    path: "/shop/:id",
-    element: <ProductDetail />,
-  },
-  {
-    path: "/category/:category",
-    element: <CategoryPage />,
-  },
-  {
-    path: "*",
-    element: <NotFound />,
-  },
-  {
-    path: "/cart",
-    element: (
-      <ProtectedRoute>
-        <Cart />
-      </ProtectedRoute>
-    ),
-  },
-  {
-    path: "/wishlist",
-    element: (
-      <ProtectedRoute>
-        <Wishlist />
-      </ProtectedRoute>
-    ),
-  },
-  {
-    path: "/checkout",
-    element: (
-      <ProtectedRoute>
-        <Checkout />
-      </ProtectedRoute>
-    ),
-  },
-  {
-    path: "/ordercompleted",
-    element: (
-      <ProtectedRoute>
-        <OrderCompleted />
-      </ProtectedRoute>
-    ),
+    element: <MainLayout />,
+    children: [
+      {
+        index: true,
+        element: <Home />,
+      },
+      {
+        path: "login",
+        element: <Login />,
+      },
+      {
+        path: "signup",
+        element: <Signup />,
+      },
+      {
+        path: "about",
+        element: <About />,
+      },
+      {
+        path: "contact",
+        element: <Contact />,
+      },
+      {
+        path: "shop",
+        element: <Shop />,
+      },
+      {
+        path: "shop/:id",
+        element: <ProductDetail />,
+      },
+      {
+        path: "category/:category",
+        element: <CategoryPage />,
+      },
+      {
+        path: "cart",
+        element: (
+          <ProtectedRoute>
+            <Cart />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: "wishlist",
+        element: (
+          <ProtectedRoute>
+            <Wishlist />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: "checkout",
+        element: (
+          <ProtectedRoute>
+            <Checkout />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: "ordercompleted",
+        element: (
+          <ProtectedRoute>
+            <OrderCompleted />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: "my-account",
+        element: (
+          <ProtectedRoute>
+            <Account />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: "*",
+        element: <NotFound />,
+      },
+    ],
   },
 ]);
 

@@ -1,4 +1,3 @@
-import React from "react";
 import { Link, useLocation } from "react-router-dom";
 
 export default function Breadcrumbs() {
@@ -6,7 +5,7 @@ export default function Breadcrumbs() {
   const pathname = location.pathname.split("/").filter((x) => x);
   return (
     <div className="text-gray-500">
-      <Link to="/home">Home</Link>
+      <Link to="/">Home</Link>
       {pathname.map((val) => {
         const route = "/" + val;
         return (

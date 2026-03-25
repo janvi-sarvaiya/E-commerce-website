@@ -1,7 +1,4 @@
-import React from "react";
-import Navbar from "../components/layout/Navbar";
 import Breadcrumbs from "../components/common/Breadcrumbs";
-import Footer from "../components/layout/Footer";
 // import { useForm } from "react-hook-form";
 
 import { FiPhone } from "react-icons/fi";
@@ -25,12 +22,11 @@ export default function Contact() {
   // });
 
   // const onSubmit = (data) => {
-    
+
   // };
 
   return (
     <>
-      <Navbar />
       <div className="max-w-390 mx-auto px-10 mt-45">
         <Breadcrumbs />
 
@@ -95,7 +91,6 @@ export default function Contact() {
           </div>
         </div>
       </div>
-      <Footer />
     </>
   );
 }

@@ -1,8 +1,5 @@
-import React from "react";
-import Navbar from "../components/layout/Navbar";
 import { useDispatch, useSelector } from "react-redux";
 import ProductCard from "../components/product/ProductCard";
-import Footer from "../components/layout/Footer";
 import { Empty } from "antd";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
@@ -27,7 +24,6 @@ export default function Wishlist() {
   };
   return (
     <>
-      <Navbar />
       <div className="max-w-390 mx-auto px-10 mt-45">
         <div className="flex items-center justify-between">
           <h1 className="text-xl">Wishlist ( {wishlistProducts?.length} )</h1>
@@ -68,7 +64,6 @@ export default function Wishlist() {
           </div>
         )}
       </div>
-      <Footer />
     </>
   );
 }
