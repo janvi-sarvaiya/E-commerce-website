@@ -1,5 +1,3 @@
-import Navbar from "../components/layout/Navbar";
-import Footer from "../components/layout/Footer";
 import Breadcrumbs from "../components/common/Breadcrumbs";
 import ImageSlider from "../components/slider/ImageSlider";
 import { ABOUTDETAIL, SERVICES } from "../utils/constant";
@@ -9,7 +7,6 @@ import shopping from "../assets/backgroundImage/shopping.png";
 export default function About() {
   return (
     <>
-      <Navbar />
       <div className="mt-45">
         <div className="ml-40">
           <Breadcrumbs />
@@ -74,7 +71,6 @@ export default function About() {
           })}
         </div>
       </div>
-      <Footer />
     </>
   );
 }

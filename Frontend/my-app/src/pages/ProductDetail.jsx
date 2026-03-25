@@ -3,11 +3,9 @@ import { useParams, useNavigate } from "react-router-dom";
 import { useFetchProduct } from "../api/HTTP_API";
 import { addToCart } from "../features/cartSlice";
 import { useDispatch, useSelector } from "react-redux";
-import Navbar from "../components/layout/Navbar";
 import Breadcrumbs from "../components/common/Breadcrumbs";
 import Rating from "@mui/material/Rating";
 import QuantityBox from "../components/product/QuantityBox";
-import Footer from "../components/layout/Footer";
 import { useUser } from "@clerk/clerk-react";
 import ProductImageGallery from "../components/product/ProductImageGallery";
 import { toast } from "react-toastify";
@@ -77,7 +75,6 @@ export default function ProductDetail() {
 
   return (
     <>
-      <Navbar />
       <div className="max-w-390 mx-auto mt-48 px-5">
         <Breadcrumbs />
         <div className="mt-12 grid grid-cols-2 gap-18">
@@ -164,7 +161,6 @@ export default function ProductDetail() {
           </div>
         </div>
       </div>
-      <Footer />
     </>
   );
 }

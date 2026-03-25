@@ -1,7 +1,5 @@
 import React, { useMemo } from "react";
-import Navbar from "../components/layout/Navbar";
 import Breadcrumbs from "../components/common/Breadcrumbs";
-import Footer from "../components/layout/Footer";
 import TotalPriceTable from "../components/common/TotalPriceTable";
 import ShowCartProduct from "../components/product/ShowCartProduct";
 import { useDispatch, useSelector } from "react-redux";
@@ -65,7 +63,6 @@ export default function Checkout() {
   };
   return (
     <>
-      <Navbar />
       <div className="max-w-390 mx-auto px-10 mt-45">
         {cartItem.length === 0 ? (
           <div className="text-center">
@@ -287,7 +284,6 @@ export default function Checkout() {
           </>
         )}
       </div>
-      <Footer />
     </>
   );
 }

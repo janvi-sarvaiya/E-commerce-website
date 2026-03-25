@@ -51,7 +51,7 @@ export default function Navbar() {
           <h1 className="text-2xl font-bold">Exclusive</h1>
           <div className="flex gap-12">
             <NavLink
-              to="/home"
+              to="/"
               className={({ isActive }) => (isActive ? "border-b" : "")}
             >
               Home
@@ -69,7 +69,7 @@ export default function Navbar() {
               Contact
             </NavLink>
             <NavLink
-              to="/"
+              to="/signup"
               onClick={(e) => {
                 if (isSignedIn) e.preventDefault();
               }}
@@ -123,7 +123,7 @@ export default function Navbar() {
                       >
                         <GoPerson className="w-6 h-6" /> Manage My Account
                       </Link>
-                      <Link to="/cart" className="flex items-center gap-3">
+                      <Link to="/" className="flex items-center gap-3">
                         <FiShoppingBag className="w-6 h-6" /> My Order
                       </Link>
                       <Link to="/" className="flex items-center gap-3">

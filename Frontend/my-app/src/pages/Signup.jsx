@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import Navbar from "../components/layout/Navbar";
 import signup from "../assets/backgroundImage/signup.png";
-import Footer from "../components/layout/Footer";
 import { useSignUp } from "@clerk/clerk-react";
 import OTPInput from "react-otp-input";
 import { toast } from "react-toastify";
@@ -66,16 +64,15 @@ export default function Signup() {
       await signUp.attemptEmailAddressVerification({
         code: code,
       });
-      navigate("/home");
+      navigate("/");
+      toast(`𝐖𝐄𝐋𝐂𝐎𝐌𝐄 ${formData.name} 👋!`);
     } catch (error) {
       console.log(error);
     }
   };
 
   return (
-    <div>
-      <Navbar />
-
+    <>
       <div className="flex mt-42 gap-40">
         <div>
           <img src={signup} alt="signup" className="w-220 h-160" />
@@ -157,8 +154,6 @@ export default function Signup() {
           </form>
         </div>
       </div>
-
-      <Footer />
-    </div>
+    </>
   );
 }

@@ -1,8 +1,6 @@
 import React, { useMemo, useState } from "react";
-import Navbar from "../components/layout/Navbar";
 import Breadcrumbs from "../components/common/Breadcrumbs";
 import { useDispatch, useSelector } from "react-redux";
-import Footer from "../components/layout/Footer";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
@@ -51,7 +49,6 @@ export default function Cart() {
 
   return (
     <>
-      <Navbar />
       <div className="max-w-390 mx-auto px-10 mt-45">
         <Breadcrumbs />
         <div className="mt-12">
@@ -104,7 +101,6 @@ export default function Cart() {
           </div>
         </div>
       </div>
-      <Footer />
     </>
   );
 }

@@ -1,6 +1,4 @@
-import Navbar from "../components/layout/Navbar";
 import { Link, useLocation } from "react-router-dom";
-import Footer from "../components/layout/Footer";
 
 import { FaCheckCircle } from "react-icons/fa";
 import { Empty } from "antd";
@@ -17,7 +15,6 @@ export default function OrderCompleted() {
 
   return (
     <>
-      <Navbar />
       <div className="max-w-390 mx-auto px-10 mt-45">
         {!orderData || !orderData.orderItems?.length ? (
           <div className="text-center">
@@ -77,7 +74,7 @@ export default function OrderCompleted() {
               </div>
               <div className="flex items-end gap-8 mt-8">
                 <Link
-                  to="/home"
+                  to="/"
                   className="bg-orange text-white rounded py-4 px-12"
                 >
                   Go to Home
@@ -147,7 +144,6 @@ export default function OrderCompleted() {
           </div>
         )}
       </div>
-      <Footer />
     </>
   );
 }

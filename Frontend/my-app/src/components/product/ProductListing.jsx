@@ -1,4 +1,3 @@
-import React from "react";
 import { useFetchProduct } from "../../api/HTTP_API.js";
 import Title from "../common/Title";
 import ProductCard from "./ProductCard";

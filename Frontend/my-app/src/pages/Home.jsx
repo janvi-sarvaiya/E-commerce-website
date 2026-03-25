@@ -1,6 +1,3 @@
-import React from "react";
-import Navbar from "../components/layout/Navbar";
-import Footer from "../components/layout/Footer";
 import IntroSlider from "../components/slider/IntroSlider";
 import ProductSlider from "../components/slider/ProductSlider";
 import MusicBanner from "../components/common/MusicBanner";
@@ -15,7 +12,6 @@ import { MdArrowForwardIos } from "react-icons/md";
 export default function Home() {
   return (
     <>
-      <Navbar />
       <div className="max-w-390 mx-auto px-10 mt-28">
         <div className="grid grid-cols-4 gap-15">
           <div className="border-r border-slate-400 pr-6">
@@ -81,7 +77,6 @@ export default function Home() {
           })}
         </div>
       </div>
-      <Footer />
     </>
   );
 }

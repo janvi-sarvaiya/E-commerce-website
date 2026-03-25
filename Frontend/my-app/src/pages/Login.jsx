@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import Navbar from "../components/layout/Navbar";
-import Footer from "../components/layout/Footer";
 import signup from "../assets/backgroundImage/signup.png";
 import { useSignIn } from "@clerk/clerk-react";
 
@@ -29,7 +27,7 @@ export default function Login() {
       if (result.status === "complete") {
         await setActive({ session: result.createdSessionId });
       }
-      navigate("/home");
+      navigate("/");
     } catch (error) {
       if (error?.message?.includes("incorrect")) {
         toast.error("Invalid email or password. Please try again.");
@@ -41,8 +39,6 @@ export default function Login() {
 
   return (
     <div>
-      <Navbar />
-
       <div className="flex mt-42 gap-40">
         <div>
           <img src={signup} alt="signup" className="w-220 h-160" />
@@ -86,8 +82,6 @@ export default function Login() {
           </form>
         </div>
       </div>
-
-      <Footer />
     </div>
   );
 }

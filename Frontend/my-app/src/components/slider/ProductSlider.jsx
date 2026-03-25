@@ -1,4 +1,3 @@
-import React from "react";
 import Title from "../common/Title";
 import CountDownTimer from "../common/CountDownTimer";
 import ProductCard from "../product/ProductCard";

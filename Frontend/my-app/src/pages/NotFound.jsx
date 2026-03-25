@@ -15,7 +15,7 @@ export default function NotFound() {
             Your visited page not found. You may go home page.
           </p>
           <Link
-            to="/home"
+            to="/"
             className="text-white py-4 px-12 rounded bg-orange"
           >
             Back to home page

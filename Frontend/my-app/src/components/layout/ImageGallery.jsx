@@ -1,4 +1,3 @@
-import React from "react";
 import Title from "../common/Title";
 import { Link } from "react-router-dom";
 import woman from "../../assets/backgroundImage/woman-back.png";

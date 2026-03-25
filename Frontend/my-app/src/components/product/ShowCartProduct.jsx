@@ -1,5 +1,3 @@
-import React from "react";
-
 export default function ShowCartProduct({ cartItem }) {
   return (
     <div className="space-y-4">
