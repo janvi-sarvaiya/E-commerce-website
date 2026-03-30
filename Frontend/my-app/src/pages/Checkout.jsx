@@ -24,12 +24,12 @@ export default function Checkout() {
   }, [cartItem]);
 
   const initialValue = {
-    username: user?.username || "",
+    username: user?.firstName || "",
     companyName: "",
-    streetAddress: "",
+    streetAddress: user?.unsafeMetadata?.address || "",
     apartment: "",
-    city: "",
-    phoneNumber: "",
+    city: user?.unsafeMetadata?.city || "",
+    phoneNumber: user?.unsafeMetadata?.phoneNumber || "",
     email: user?.primaryEmailAddress?.emailAddress || "",
     paymentMethod: "",
   };

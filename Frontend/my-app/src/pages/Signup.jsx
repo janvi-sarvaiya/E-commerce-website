@@ -33,7 +33,7 @@ export default function Signup() {
       await signUp.create({
         emailAddress: formData.email,
         password: formData.password,
-        username: formData.name,
+        firstName: formData.name,
       });
 
       await signUp.prepareEmailAddressVerification({

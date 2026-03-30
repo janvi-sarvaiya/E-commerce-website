@@ -8,7 +8,7 @@ import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
-import Account from "./pages/Account";
+import Account from "./pages/Account/Account";
 import Cart from "./pages/Cart";
 import Shop from "./pages/Shop";
 import Wishlist from "./pages/Wishlist";
@@ -17,6 +17,9 @@ import CategoryPage from "./pages/CategoryPage";
 import Checkout from "./pages/Checkout";
 import OrderCompleted from "./pages/OrderCompleted";
 import NotFound from "./pages/NotFound";
+import Profile from "./pages/Account/Profile";
+import Orders from "./pages/Account/Orders";
+import ChangePassword from "./pages/Account/ChangePassword";
 
 const router = createBrowserRouter([
   {
@@ -94,6 +97,20 @@ const router = createBrowserRouter([
             <Account />
           </ProtectedRoute>
         ),
+        children: [
+          {
+            index: true,
+            element: <Profile />,
+          },
+          {
+            path: "orders",
+            element: <Orders />,
+          },
+          {
+            path: "change-password",
+            element: <ChangePassword />,
+          },
+        ],
       },
       {
         path: "*",
