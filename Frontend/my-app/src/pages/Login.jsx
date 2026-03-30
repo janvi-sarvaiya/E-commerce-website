@@ -75,7 +75,7 @@ export default function Login() {
                 Log in
               </button>
 
-              <Link to="/my-account" className="text-orange">
+              <Link to="/my-account/change-password" className="text-orange">
                 Forget Password?
               </Link>
             </div>
